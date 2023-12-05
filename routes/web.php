@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\PesanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,5 @@ Route::get('/', [IndexController::class,'index']);
 Route::get('/tentang', [IndexController::class,'tentang']);
 Route::get('/layanan', [IndexController::class,'layanan']);
 Route::get('/kontak', [IndexController::class,'kontak']);
+
+Route::resource('pesan',PesanController::class);

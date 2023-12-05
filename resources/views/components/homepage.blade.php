@@ -210,6 +210,8 @@
 
     <!-- Template Javascript -->
     <script src="{{ asset('template/js/main.js')}}"></script>
+
+    {{ $kodejs ?? ''}}
 </body>
 
 </html>
