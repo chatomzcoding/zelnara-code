@@ -1,4 +1,4 @@
-<x-homepage>
+<x-homepage menu="layanan">
         <!-- Hero Start -->
         <div class="container-fluid pt-5 bg-primary hero-header">
             <div class="container pt-5">

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Zelnara Code</title>
+    <title>{{ $datapokok['nama']}}</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -56,9 +56,15 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="{{ url('/')}}" class="nav-item nav-link active">Beranda</a>
-                        <a href="{{ url('tentang')}}" class="nav-item nav-link">Tentang</a>
-                        <a href="{{ url('layanan')}}" class="nav-item nav-link">Layanan</a>
+                        <a href="{{ url('/')}}" class="nav-item nav-link @if ($menu == 'beranda')
+                            active
+                        @endif">Beranda</a>
+                        <a href="{{ url('tentang')}}" class="nav-item nav-link @if ($menu == 'tentang')
+                        active
+                    @endif">Tentang</a>
+                        <a href="{{ url('layanan')}}" class="nav-item nav-link @if ($menu == 'layanan')
+                        active
+                    @endif">Layanan</a>
                         {{-- <a href="project.html" class="nav-item nav-link">Projects</a> --}}
                         {{-- <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
@@ -70,7 +76,9 @@
                                 <a href="404.html" class="dropdown-item">404 Page</a>
                             </div>
                         </div> --}}
-                        <a href="{{ url('kontak')}}" class="nav-item nav-link">Kontak</a>
+                        <a href="{{ url('kontak')}}" class="nav-item nav-link @if ($menu == 'kontak')
+                        active
+                    @endif">Kontak</a>
                     </div>
                     {{-- <button type="button" class="btn text-white p-0 d-none d-lg-block" data-bs-toggle="modal"
                         data-bs-target="#searchModal"><i class="fa fa-search"></i></button> --}}
@@ -132,17 +140,15 @@
             <div class="row g-5">
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
                     <a href="index.html" class="d-inline-block mb-3">
-                        <h1 class="text-white">AI<span class="text-primary">.</span>Tech</h1>
+                        <h1 class="text-white">Zelnara<span class="text-primary">.</span>Code</h1>
                     </a>
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
-                        amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus
-                        clita duo justo et tempor</p>
+                    <p class="mb-0">{{ $datapokok['deskripsi-singkat']}}</p>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
-                    <h5 class="text-white mb-4">Get In Touch</h5>
-                    <p><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <h5 class="text-white mb-4">Hubungi Kami</h5>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>{{ $datapokok['alamat']}}</p>
+                    <p><i class="fa fa-phone-alt me-3"></i>{{ $datapokok['wa']}}</p>
+                    <p><i class="fa fa-envelope me-3"></i>{{ $datapokok['email']}}</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
@@ -151,21 +157,17 @@
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                {{-- <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
                     <h5 class="text-white mb-4">Popular Link</h5>
                     <a class="btn btn-link" href="">About Us</a>
                     <a class="btn btn-link" href="">Contact Us</a>
                     <a class="btn btn-link" href="">Privacy Policy</a>
                     <a class="btn btn-link" href="">Terms & Condition</a>
                     <a class="btn btn-link" href="">Career</a>
-                </div>
+                </div> --}}
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
-                    <h5 class="text-white mb-4">Our Services</h5>
-                    <a class="btn btn-link" href="">Robotic Automation</a>
-                    <a class="btn btn-link" href="">Machine learning</a>
-                    <a class="btn btn-link" href="">Predictive Analysis</a>
-                    <a class="btn btn-link" href="">Data Science</a>
-                    <a class="btn btn-link" href="">Robot Technology</a>
+                    <h5 class="text-white mb-4">Website Lainnya</h5>
+                    <a class="btn btn-link" href="https://app.zelnara.com/" target="_blank">App Chatomz</a>
                 </div>
             </div>
         </div>
